@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="shortcut icon" href="resources/favicon.jpg">
+	<title>Nikhil Maserang</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles/base.css">
+	<link rel="stylesheet" type="text/css" href="styles/scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="styles/animate.css">
+	<base target="_blank">
+</head>
+
+<body>
+	<div id="bodycontent">
+	
+		<br><br>
+		
+		<h3 class="animate0"><a target="_self" href="index.html">Home</a></h3>
+		<h1 class="animate0">How I Created The Site</h1>
+	
+		<br>
+		
+		<h2 class="animate1">Website Content</h2>
+		
+		<h3>
+			<p class="animate2">
+				Websites are written in HTML (Hyper Text Markup Language), which is a type of markup language.
+				This means that you use it to tell a program (in this case a web browser), such as Google Chrome, Microsoft Edge, or Mozilla Firefox, how to display some content on a page.
+				HTML is made up of 'tags', which essentially mark the start and end of some piece of content. For example, this paragraph starts with a <code>&lt;p&gt;</code> tag and ends with a <code>&lt;/p&gt;</code> tag.
+				To write a webpage, you can literally create a new text file on your desktop, put some HTML code in it, change the file extension to <code>.html</code>, and open it using your favorite web browser.
+				Try to keep in mind that a web browser is a program for displaying HTML files just like a photos application is a program for displaying PNG or JPEG files.
+				HTML web pages are just files which are displayed using a web browser.
+				w3schools.com has a good course on HTML <a href="https://www.w3schools.com/html/default.asp">here</a>, which is what I used to learn how to write HTML code.
+			</p>
+			
+			<p class="animate3">
+				HTML allows you to create content for web pages, but to change how it looks you need CSS (Cascading Style Sheets).
+				CSS allows you to <i>style</i> the elements in your HTML files.
+				For example, you could create a style in a CSS document which says that all <code>&lt;p&gt;</code> elements should be 14px italicized Arial font.
+				CSS code can actually be written 'in line', which means in the HTML document itself, or it can be written in a separate file and linked to the HTML file using a special tag.
+				This is how this webpage works: rather than each and every element having its own style, I wrote one single stylesheet which I could use for the whole website
+				(backgrounds, text size and color, scrollbar, etc), and every HTML page is linked to that one stylesheet.
+				This way, I only have to write my CSS code once.
+				w3schools.com also has a course on CSS <a href="https://www.w3schools.com/css/default.asp">here</a>, which is what I used to learn how to write CSS.
+			</p>
+			
+			<p class="animate4">
+				If you want to view the HTML code for this website, it's actually really easy.
+				Just hit <kbd>Ctrl</kbd> + <kbd>U</kbd> while on this webpage, and a new tab will pop open displaying the raw HTML code.
+				To see the CSS code, look for the lines near the beginning which look like this: <code>&lt;link rel="stylesheet" type="text/css" href="styles/stylesheet.css"&gt;</code>.
+				These are the tags which link the stylesheets to the HTML document, and you can click them to view the stylesheets (I had one stylesheet which I broke into three for organizational purposes).
+			</p>
+			
+			<p class="animate5">
+				Finally, the background itself is just a tileable free stock image that I thought looked cool.
+				The favicon (the small icon next to the website name in the browser tab) is just my Google profile picture.
+				I made the customized scrollbar by using information from <a href="https://css-tricks.com/custom-scrollbars-in-webkit/">this site.</a>
+			</p>
+		</h3>
+		
+		<br>
+		
+		<h2 class="animate6">Basically How the Internet Works</h2>
+
+		<h3>
+			<p class="animate7">
+				It's all well and good to have written a great website on your computer, but on your computer it's just a local file, not something anyone can access over the internet.
+				There are a lot of steps involved to getting a local website online, but since I've already done the research I can lay it out to you.
+				This page is not a good substitute for some old-fashioned research, but it should help speed it up so you aren't flying in blind at the beginning and have some idea of what is happening.
+			</p>
+			
+			<p class="animate8">
+				The internet is made up of a lot of connected computers which all store and transmit information.
+				When you view a webpage with a certain URL, your computer sends a request to your web router or ISP connection point, which transmits the request through the internet to the computer server associated with that URL.
+				Then, the server sends the requested content (normally an HTML file when browsing the internet) back to your computer.
+				Pretty much every webpage you've visited (barring procedurally generated pages and other more complicated applications) is just a file on some computer somewhere.
+			</p>
+			
+			<p class="animate9">
+				Every computer connected to the internet has a unique IP address - a number that might look something like this: 172.16.254.1 - which identifies it and allows it to communicate without ambiguity to other computers.
+				When you enter a URL (from here on out called a domain name) into a browser, no computer actually knows what that means, as computers aren't identified by domain names but by IP addresses.
+				The request actually goes from your computer to your ISP to a DNS (domain name system) server, which translates the domain name into an IP address that computers can understand.
+				Only then is the request routed to the server with the requested content.
+			</p>
+			
+			<p class="animate10">
+				So for your website to go live, you need a computer which will be running and has software on it which can listen to the internet for any requests coming its way.
+				The way you can get this is by either using paid commercial hosting, free commercial hosting (such as <a href="https://pages.github.com/">GitHub pages</a>), or hosting it on your own device.
+				With commercial hosting, a server at some company will handle any requests for you as well as store your files, so you have to do nothing but create the webpage.
+				If you do it yourself you need to procure a device (normally an old computer or a Raspberry Pi), install server software to listen for requests (normally Apache), write the webpage, configure your router, etc.
+				I would personally recommend that unless you specifically want the experience and hassle of doing it yourself, go with the GitHub pages option.
+			</p>
+			
+			<p class="animate11">
+				Depending on how your hosting works, you may want to purchase a domain name from somewhere like GoDaddy, where I bought mine.
+				The reason is that with a domain name, people don't have to enter the IP of the computer with your webpage or use the long domain GitHub or your hosting provider gives you.
+				Don't make the mistake I made: a domain name is <i>not</i> hosting; they are different things which you need to get separately (although sometimes they are packaged together).
+				Even if you use GitHub and they provide a domain name for you,
+				(this page is technically at <code>https://nik3141.github.io/nikhilmaserang.info/creating-the-site.html</code> right now),
+				most domain registrars allow you to redirect or forward your short domain (like <code>nikhilmaserang.info</code>) to the longer one, making memorizing it much easier.
+			</p>
+			
+			<p class="animate12">
+				You can also set up subdomains, which are like a word in front of the domain - for example, <code>tutoring</code> in <code>http://tutoring.nikhilmaserang.info</code> is a subdomain.
+				Another common subdomain is <code>www</code>, such as in <code>http://www.nikhilmaserang.info</code>.
+				You can set these to go to a specific page or redirect to some other website.
+			</p>
+		</h3>
+		
+		<br>
+		
+		<h2 class="animate13">Summary so Far</h2>
+		
+		<h3 class="animate14">
+			<ul>
+				<li>I learned HTML and CSS and wrote a sparkly webpage</li>
+				<li>I bought the domain name nikhilmaserang.info</li>
+				<li>I got a Raspberry Pi, set it up, and downloaded the Apache software on it</li>
+				<li>I spent at least two weeks figuring out how to configure the Pi and my router and my domain name to work together</li>
+				<li>I realized that Spectrum was blocking my webpage from being viewed externally, so I moved all of the website files to GitHub</li>
+				<li>I redirected my domain name to my GitHub repository</li>
+				<li>I added the tutoring subdomain and redirected it to my tutoring page in my GitHub repository.</li>
+			</ul>
+		</h3>
+		
+		<br>
+		
+		<h2 class="animate15">More IP and Port Stuff</h2>
+		
+		<h3>
+			<p class="animate16">
+				If, for some reason, you want to host a site yourself on your own device, there are a few extra things you'll need to know about IP addresses.
+				Firstly, your computer actually has two IP addresses: an external one and an internal one.
+				When you connect to your wifi network, your router assigns you an IP address to refer to internally, which normally looks something like this: 192.168.0.X.
+				Your router's internal IP address is almost always 192.168.0.1.
+				This means that internally, you and your neighbor could both be assigned the same internal IP - say, 192.168.0.28 - by your routers.
+				Your internal IP is not visible outside of your wifi network, however.
+				Every router has a unique external IP visible to everyone on the internet - every website you visit, every game server you join, etc - which is where web servers see your requests coming from.
+				Your computer sends a request to your router, and your router forwards that request to a DNS server, which helps it be forwarded to the correct end location.
+				For more info see <a href="https://troypoint.com/wp-content/uploads/2019/08/internal-external-ip-address-thumb.png">this</a> diagram, which shows a router with three devices connected to it, each receiving an internal IP, and the router having a single external IP.
+			</p>
+			
+			<p class="animate17">
+				The next thing to know is that requests actually also have a specific port they are associated with; for example, most requests for web pages come in either on port 80, 8080, or 443.
+				Game servers have different ports, mail servers have different ports, etc etc. Some are standardized and some are not.
+				To host a web server on a computer on your wifi, requests will come in from the internet to your external IP on a specific port (probably 80) and be redirected to the correct port and internal IP for the device running the server software.
+				To make this happen, you will need to configure your router's port forwarding to accept requests on your external IP to port 80 and redirect them to port 80 on the device with the correct internal IP.
+				To make this work consistently you will need to set your device to have a static internal IP, so it doesn't change whenever it connects to the internet.
+			</p>
+			
+			<p class="animate18">
+				http requests come in on port 80, while https requests normally come in on port 443.
+				If you want your website to have https, you'll not only need to set up port forwarding for port 443, as well as probably use virtual hosts on your device, but you'll also need to get an SSL certificate.
+				Because Spectrum blocked me from actually hosting it externally (it worked fine internally) I couldn't set it up properly, but I still recommend <a href="https://letsencrypt.org/">Let's Encrypt</a>, because they are free and were relatively easy to use.
+			</p>
+			
+			<p class="animate19">
+				Finally, if you do go the route of hosting it yourself (I learned a lot, but it was a lot of hassle so I don't necessarily recommend it), you need to be very comfortable with command line usage and utilities, both on the device you use to write the site and the device you use to host it.
+				If you host on a Raspberry Pi you'll need to learn about the Linux Bash terminal, while on Windows you'll need to learn about the Command Prompt.
+				If you use a Mac...I have no clue.
+				Anyways, hopefully this was a bit enlightening or gave you some insight into how web development works.
+			</p>
+		</h3>
+		
+		<h3 class="animate20">
+			<a target="_self" href="#">Back to Top</a>
+		</h3>
+	</div>
+</body>
+
+</html>

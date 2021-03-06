@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="shortcut icon" href="../resources/favicon.jpg">
+	<title>OOP Programming</title>
+	
+	<link rel="stylesheet" type="text/css" href="../styles/base.css">
+	<link rel="stylesheet" type="text/css" href="../styles/scrollbar.css">
+	<base target="_self">
+</head>
+
+<body>
+	<div id="bodycontent">
+	
+		<br>
+		<h4><p><a target="_self" href="../index.html">Home</a></p></h4>
+		<h1>Object Oriented Programming (OOP)</h1>
+		<hr>
+		
+		<h2>Objects</h2>
+
+		<h3>
+			<p>
+				Object Oriented Programming attempts to make programming more understandable and intuitive to humans by introducing the idea of an <i>object</i>.
+				In the real world, we can group objects into categories which all have the same properties and behaviors, but each object might have a different value for a particular property.
+				For example, all bicycles have a frame made out of some material; however, different bicycles might be made out of different materials.
+			</p>
+			<p>
+				OOP lets us define our own 'categories' of objects, which we call <i>classes</i>.
+				These classes will have properties and behaviors: for example, if we made a bicycle class, it might have a <code>wheelSize property</code>, a <code>handleShape property</code>, etc.
+				We can then make specific <i>instances</i> of those classes, which actually have values for those variables; each instance we make could have different values, but they'd all be the same type of object: a bicycle.
+			</p>
+			<p>
+				Another way to think of it is like this: a class is like a blueprint or a general description of what properties and behaviors an object might have; it's the <i>idea</i> of what a bicycle is.
+				An instance of an object is an actual thing you'd encounter out in the real world; it's the bicycle which might almost knock you off the pavement while you're on your evening walk.
+				The bicycle idea tells us that bicycles have a frame which has a color, but different bicycles can have different color frames.
+			</p>
+		</h3>
+		
+		<h2>Fields and Methods</h2>
+		
+		<h3>
+			<p>
+				<i>Fields</i> and <i>methods</i> are the technical terms for the properties and behaviors we define for our objects.
+				Fields take the form of variables, while methods are <a href="procedural-programming.html">functions</a>.
+				Suppose we want to make a <code>Person</code> class; the fields of that class would likely be things such as <code>height</code>, <code>weight</code>, <code>eye_color</code>, <code>hair_color</code>, etc.
+				The methods of that class could be things like <code>eatBreakfast()</code>, <code>sleep()</code>, <code>brushTeeth()</code>, etc.
+			</p>
+			<p>
+				Another example could be a <code>Vehicle</code> class: our fields could be things like <code>numWheels</code>, <code>numSeats</code>, <code>speed</code>, <code>directionOfTravel</code>. etc.
+				Our methods would likely be things like <code>turnRight()</code>, <code>turnLeft()</code>, <code>accelerate()</code>, etc.
+			</p>
+		</h3>
+		
+		<h2>Instantiating Objects</h2>
+		
+		<h3>
+			<p>
+				When we have a class defined (or we import one from someone else's library - yes, we can import objects as well as functions), we can make an object of that class by <i>instantiating</i> it, thereby making an instance of that class.
+				Remember, an instance of a class is like a concrete item you can interact with, while the class definition is like the idea of an object..
+			</p>
+			<p>
+				Then, we can 'call' the class's methods on that instance to modify its variables using the <i>dot operator</i>.
+				Let's suppose we have a <code>Vehicle</code> object already instantiated called <code>myVehicle</code> (objects, like variables and datastructures, need names for us to refer to):
+			</p>
+			<div class="codeinset">
+				<code>myVehicle.decelerate()</code><br>
+				<code>myVehicle.turnLeft()</code><br>
+				<code>myVehicle.accelerate()</code><br>
+			</div>
+			<p>
+				Presumably, the <code>decelerate()</code> method will reduce the vehicle's speed, the <code>turnLeft()</code> method will have some code that works out which way the vehicle is heading and makes the appropriate changes to its variables, and the <code>accelerate()</code> method will increase the vehicle's speed.
+				Remember that there is no vehicle anywhere in the computer: the <code>myVehicle</code> object is just a datatype which we have defined so that we can more easily think about what our code is doing.
+				Also notice that if we have two vehicles, say, <code>myVehicle</code> and <code>yourVehicle</code>, they will have the same variables, so they will both have a <code>speed</code>, <code>directionOfTravel</code>, etc, but the values <i>can and likely will be different</i>.
+				Calling a instance of a class's method on an instance of the class only modifies the variables of that instance, just like pressing the brake pedal in your car only affects the speed of your car, not the cars around you, and certainly not every car in the entire world.
+			</p>
+		</h3>
+		
+		<h2>Inheritance</h2>
+		
+		<h3>
+			<p>
+				The idea of <i>inheritance</i> is powerful in OOP because it allows us to define the relationships between classes, further increasing the understandability of software.
+				For example, we here in the real world know that a Car is a type of Vehicle; thus, it could be said that a car 'inherits' some of the traits that a vehicle has.
+				Similarly, we know that Student is more likely than not a type of Person, and a Bird is a type of Animal, etc etc.
+			</p>
+			<p>
+				Many things seem to be related to other things, and expressing this relationship can allow us to make our code more understandable, as well as preventing duplicated code.
+				For example, we can define a <code>Car</code> class to inherit from a <code>Vehicle</code> class, which will mean that all attributes and behaviors of the <code>Vehicle</code> will automatically transfer over to the car.
+				This might be useful if we have a <code>Car</code> class and a <code>Bike</code> class which both share attributes or behaviors, such as the <code>accelerate()</code> method.
+				Anything that is shared between these two classes can be put in the <code>Vehicle</code> class, and if both <code>Car</code> and <code>Bike</code> inherit from the <code>Vehicle</code> class, they'll both have it.
+			</p>
+			<p>
+				Essentially, instead of having to write two identical <code>accelerate()</code> methods for the two classes, we can just write one;
+				the more things that are in common, the bigger the time and complexity savings.
+				We call the class which inherits fields and methods the <i>subclass</i> or <i>child class</i>, while the class it inherits from is called the <i>superclass</i> or <i>parent class</i>.
+				In some programming languages, like Java, classes can have at most one superclass, while in others, like Python, classes can have an arbitrary number of superclasses.
+			</p>
+		</h3>
+		
+		<h2>Interfaces</h2>
+		
+		<h3>
+			<p>
+				<i>Interfaces</i>, like inheritance, allow us to write cleaner, more efficient, and more understandable code.
+				Just like a class might inherit attributes or behaviors from its superclass, a class can <i>implement</i> behaviors from an interface.
+				An interface is different from a class in that it can only describe behaviors, not attributes.
+				The reason an interface is useful is because it can allow many disparate classes, which may not fall into a neat subclass-superclass hierarchy, to share code that might otherwise have to be written multiple times.
+				
+			</p>
+			<p>
+				Let's think of a concrete example: many things can be directed by a driver of some type, such as horses, cars, planes, trains, drones, pogosticks, skateboards, etc; however, it isn't obvious what parent class these classes could have.
+				What parent class could a horse, a pogostick, and a drone have in common?
+				We don't want to have to write the code to accelerate, decelerate, and turn for every single class, so we can instead wrap it in an interface.
+				For example, our interface could be called <code>Steerable</code>, and it could contain the methods needed to steer an object.
+			</p>
+			<p>
+				Just as inheritance allows us to group and structure the relationships between classes based on linear inheritance of characteristics, interfaces allow us to group and relate classes by the behaviors which they share.
+				Additionally, there are normally no restrictions on how many interfaces a class can implement, while many times a class can only inherit from one parent.
+			</p>
+		</h3>
+		
+		<h2>In Conclusion</h2>
+		
+		<h3>
+			<p>
+				OOP allows us to make really clean, efficient, and understandable code using the idea of an object, which mimics a real-world object in that it has properties and behaviors, known as fields and methods.
+				An object definition (class definition) is like a blueprint or the idea of what makes a thing a thing, while an instance of an object is more concrete, like something you can run into in the real world.
+				Objects' relationships can be expressed in code by using inheritance or interfaces, which enhance understandability while reducing the need for duplicated code.
+			</p>
+			<p>
+				Finally, I want to note that even though all the sample objects on this page were actual real-world things, that isn't necessary.
+				OOP can be used to program at very abstract levels, and creating objects which don't necessarily exist in the real world, such as an <code>ImageBuffer</code>, is fine, and in fact very useful.
+			</p>
+			<p>
+				Congratulations! You've read through all of these pages and now know a heck of a lot more than you did when you started.
+				Now, it's time to start actually programming, so head on to the <a href="java-setup.html">Java Setup</a> or <a href="python-setup.html">Python Setup</a> pages to set up your workspace.
+				After than, you can head to the <a href="java.html">Java</a> or <a href="python.html">Python</a> pages to start learning how to actually code.
+			</p>
+		</h3>
+		<hr>
+		<h4><p><a target="_self" href="../index.html">Home</a>&emsp;&emsp;&emsp;&emsp;<a target="_self" href="#">Back to Top</a></p></h4>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+Order theory
+
+
+
+
+
+
+
+
+U-sub, trig sub, partial fractions stuff, regular integration, integration by parts/tabular
+
+
+
+group theory
+group = set + operation
+associative
+identity
+inverse
+
+group homomorphism:
+given (G, +) and (G', *)
+f: G -> G'
+f(x + y) = f(x) * f(y)
+
+group isomorphism:
+bijective homomorphism meaning that they are the same except for the names of the elements and operation

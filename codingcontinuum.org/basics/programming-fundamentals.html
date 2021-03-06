@@ -1,0 +1,680 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="shortcut icon" href="../resources/favicon.jpg">
+	<title>Programming Fundamentals</title>
+	
+	<link rel="stylesheet" type="text/css" href="../styles/base.css">
+	<link rel="stylesheet" type="text/css" href="../styles/scrollbar.css">
+	<base target="_blank">
+</head>
+
+<body>
+	<div id="bodycontent">
+	
+		<br>
+		<h4><p><a target="_self" href="../index.html">Home</a></p></h4>
+		<h1>Programming Fundamentals</h1>
+		<hr>
+		
+		<h3><p>Please note that any code on this page is <a href="https://economictimes.indiatimes.com/definition/pseudocode"><i>pseudocode</i></a>, meaning it won't work in any actual programming language.</p></h3>
+		
+		<h2>Binary Numbers</h2>
+		
+		<h3>
+			<p>
+				Binary numbers are so important for the study of computer science that I put them on their own special page <a target="_self" href="binary-numbers.html">here</a>.
+				If you already know how binary numbers and binary operations work, feel free to skip that section.
+				If not, please read that page before continuing with this one, because this one will assume that you understand them.
+				I suggest you read it just to make sure that you haven't missed any information.
+			</p>
+		</h3>
+		
+		<h2>Algorithms</h2>
+		
+		<h3>
+			<p>
+				Computers, in their most basic form, are machines that follow sets of instructions which we give them, which we call <i>algorithms</i>.
+				That's all they are! Almost anything can be a computer: for examples see <a href="https://www.youtube.com/watch?v=8BOvLL8ok8I">this</a> video about a computer made of a marble dropper or <a href="https://www.youtube.com/watch?v=pdmODVYPDLA">this</a> video about a computer made in the card game Magic the Gathering.
+				Algorithms form the basis for modern computer science.
+			</p>
+			<p>
+				There are many types of algorithms, and they all serve different purposes.
+				For example, there are algorithms which add two numbers, or compare them to determine which is bigger, or sort lists of names alphabetically, or determine which pages should show up first in a Google search.
+				There can be many different algorithms that achieve the same thing, but depending on the specifics of the application, we might choose one over the other.
+				If we value speed, we might pick the fastest algorithm.
+				If we value being able to run it on many computers, we might choose the least <i>resource intensive</i> algorithm.
+				This would be the one that uses up the least amount of processing power and/or memory.
+			</p>
+			<p>
+				At the basis of an algorithm is the idea of the manipulation of <i>data</i>.
+			</p>
+		</h3>
+		
+		<h2>Primitive Data Types</h2>
+		
+		<h3>
+			<p>
+				Data is information; data can be a number, or a true or false value, or a word, or a binary number.
+				Data has two components: the value of the data itself and the <i>metadata</i> of the data, which refers to information about the data, such as when it was created or what it represents or who created it.
+				We can categorize the values of data into several <i>datatypes</i>.
+			</p>
+			<p>
+				Firstly, there is the <i>Boolean</i> data type, which has only two possible values: True or False.
+				It can also be represented by a single bit, meaning a 1 or 0 value, where 1 is True and 0 is False.
+			</p>
+			<p>
+				In terms of integer values (...-3, -2, -1, 0, 1, 2, 3...) there are bits, nibbles, bytes, shorts, ints, and longs.
+				The difference between all of these is the amount of data which can be stored, ie the limits of what can be represented in each type.
+				Additionally, because each of these are defined only by their size in bits (1s or 0s in the binary representation of the number), they can hold either unsigned (only positive) or signed (negative numbers using <a href="binary-numbers.html#two's-complement">Two's Complement</a> or some other representation scheme) numbers.
+			</p>
+			<p>
+				- A bit can only hold a 0 or a 1, making it equivalent to a boolean.<br>
+				- A nibble (4 bits) can hold 16 values, either 0 to 15 if unsigned or -8 to +7 if signed.<br>
+				- A byte (8 bits or 2 nibbles) can hold 256 values, either 0 to 255 unsigned or -128 to +127 if signed.<br>
+				- A short (16 bits or 2 bytes) can hold 65536 values, so 0 to 65,535 unsigned or −32,768 to +32,767 signed.<br>
+				- A signed int (32 bits, or 4 bytes) holds a value within the bounds of −(2<sup>31</sup>) to 2<sup>31</sup> − 1.<br>
+				- A signed long (64 bits or 8 bytes) holds a value within the bounds of −(2<sup>63</sup>) to 2<sup>63</sup> − 1.<br>
+			</p>
+			<p>
+				Another datatype is a decimal number, such as 5.327, normally referred to as a <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating-point number</a>.
+				These numbers are stored in a similar way to <a href="https://en.wikipedia.org/wiki/Scientific_notation">scientific notation</a>, and are sometimes called <i>doubles</i>.
+			</p>
+			<p>
+				An important datatype is the 'char' datatype, which stands for a single character.
+				Computers can only deal in binary, so relating a character to a binary representation of it is very important; this is called <i>character encoding</i>.
+				Some examples of character encoding from the pre-digital age are Morse code or signal flags used in ancient times (from <a href="https://en.wikipedia.org/wiki/Character_encoding">Wikipedia</a>).
+				Right now, the two most common character encodings are ASCII and Unicode, although Unicode is steadily gaining traction because of its greater ability to represent international symbols not found in the English language.
+			</p>
+			<p>
+				Take a look at the ASCII table on <a href="https://ascii.cl/">this</a> page. ASCII uses 7 bits to represent the numbers 0 - 127, which each have an associated symbol.
+				For example, lowercase letter 'a' is represented in ASCII by the number 97.
+				You'll also see that at the beginning are some symbols which seem to be rather arbitrary combinations of capital letters.
+				These are actually non-character symbols, such as a newline or a tab or an escape character, which don't have a symbol but are important to be able to represent.
+				If you are wondering, the HEX column on the table is referring to the hexadecimal (Base 16) representation.
+				Just like we can represent numbers in base 2 and base 10, we can represent them in any base, and base 16 happens to be very useful for computer programming.
+			</p>
+			<p>
+				Moving on to Unicode, you may have seen 'UTF-8' or 'UTF-16' or 'UTF-32' at some point on a computer. These are all Unicode standards, where the number after the 'UTF-' refers to the number of bits used.
+				UTF-8 encoding uses 8 bits, UTF-16 uses 16, etc. Understanding that a character/symbol can be represented by a number according to an encoding standard is an important concept.
+			</p>
+		</h3>
+		
+		<h2>Data Structures</h2>
+		
+		<h3>
+			<p>
+				The datatypes that you just read about are often called <i>primitive data types</i>, because they are native or 'built-in' to many programming languages.
+				Different programming languages may differ slightly in terms of what datatypes are native or not, but those types that are above are built-in to most languages.
+				Now, we're going to turn to <i>data structures</i>, which allow us to organize data so that it can be stored and retrieved.
+				Datastructures can have different organizational schemes, which is primarily what sets different datastructure types apart.
+				Some data structures are primitive in some languages, while in others, they aren't. It really depends on the language.
+				For now we'll deal with datastructures which use a key-value organizational scheme, where a value in the datastructure is correlated to a key which 'points' to where the value is stored.
+			</p>
+			<p>
+				The first data structure we'll look at is an <i>array</i>. Arrays are sometimes called lists or vectors, or matricies if they are multidimensional (we'll get to this later).
+				To understand arrays, let's construct an analogy.
+				An array is like a table with a placard on it. The placard is the name of the array - it's a piece of metadata about the array.
+				The table has multiple cups in a neat, orderly row on it, each labeled with a unique number, starting from 0 and then increasing from there.
+				Let's suppose that there are 4 cups, labeled 0, 1, 2, and 3.
+				Inside each cup we can put a primitive data type, such as a number stored as an int,
+				so for example the 0th cup can have the number 5, the cup labeled '1' can have the number 7, the cup labeled '2' can have the number 3, and the cup labeled 3 can have the number '-13'.
+				Now we can say that we have an <i>array of ints</i>, or an <i>int array</i>.
+				In some languages, you are allowed to mix what types are in each cup, but for now we will assume that a valid array must have the same data type in every filled cup.
+			</p>
+		</h3>
+		<table>
+			<tr>
+				<th>Index:</td>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+
+			</tr>
+			<tr>
+				<th>Value:</td>
+				<td>5</td>
+				<td>7</td>
+				<td>3</td>
+				<td>-13</td>
+
+			</tr>
+		</table>
+		<h3>
+			<p>
+				Let's define some terminology: firstly, an <i>element</i> in the array is a value that we put in a cup.
+				Each element has an <i>index</i>, which basically refers to the number on the cup it resides in.
+				Arrays in most languages are <i>0-indexed</i>, which means their index numbers start at 0 rather than 1.
+				This might seem confusing in the beginning, but if you live with it for long enough it will become second nature to refer to the first cup as the 0th index.
+				Arrays are <i>ordered</i>, which means what it says: there is a 'first' element, a 'second' element, all the way up to a 'last' element.
+				The length/size of an array is the number of cups we have; it is the number of spaces we have to put elements.
+				Notice that because arrays are 0-indexed, the very last element has an index of the array's length <i>minus one</i>.
+			</p>
+			<p>
+				As you can see in the above image, the array index is the <i>key</i>, while the value which the key refers to is quite simply the value.
+				To refer to any element in the array, we can use the index to retrieve or modify the correlated value. Thus it is a simple key-value datastructure.
+			</p>
+			<p>
+				At this point I would be remiss to not talk about <i>strings</i>.
+				A string is a type of array, but it is so special that in some languages (such as Python) it counts as a primitive data type.
+				A string is an array of chars, which basically means that it is a word or collection of words.
+				For example, "Hello World" is a string and an array of characters.
+				We would say that the length of the string is 11 elements (characters) long, and it occupies indices 0 to 10.
+				The space character would have an index of 5.
+				Please note that when using arrays, the term 'subscript' rather than 'index' is sometimes used; this has nothing to do with subscript text in wordprocessing.
+			</p>
+		</h3>
+		<table>
+			<tr>
+				<th>Index:</td>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<th>Value:</td>
+				<td>H</td>
+				<td>e</td>
+				<td>l</td>
+				<td>l</td>
+				<td>o</td>
+				<td> </td>
+				<td>W</td>
+				<td>o</td>
+				<td>r</td>
+				<td>l</td>
+				<td>d</td>
+			</tr>
+		</table>
+		<h3>
+			<p>
+				Now, let's talk about <i>dictionaries</i>, also known as maps.
+				Like the name implies, these map a key to a value.
+				The difference between an array and a dictionary is that in an array, the keys have to be integers, and the values have a specific order;
+				in a dictionary, however, the keys are characters or strings.
+				For example, we could have a map/dictionary with a set of key-value pairs like this:
+			</p>
+		</h3>
+		<table>
+			<tr>
+				<th>Key</td>
+				<th>Value</td>
+			</tr>
+			<tr>
+				<td>"First Name"</td>
+				<td>"John"</td>
+			</tr>
+			<tr>
+				<td>"Last Name"</td>
+				<td>"Smith"</td>
+			</tr>
+			<tr>
+				<td>"Age"</td>
+				<td>"32"</td>
+			</tr>
+			<tr>
+				<td>"City"</td>
+				<td>"Seattle"</td>
+			</tr>
+			<tr>
+				<td>"State"</td>
+				<td>"Washington"</td>
+			</tr>
+		</table>
+		<h3>
+			<p>
+				They don't have a specific order; we refer to them not using an integer index, but we using the string key.
+				Using our cups-on-a-table analogy, the cups are now settled on the table in no particular order, and they are labeled not with a number but with a word (really a string or a character).
+			</p>
+		</h3>
+		
+		<h2>Variables</h2>
+		
+		<h3>
+			<p>
+				Now that we've established what data is, we should ask how we are to manipulate it.
+				To do this, we have to use the concept of a variable; variables allow us to store, modify, and compare the values of data in our programs.
+				A variable normally must be 'declared', meaning we tell the computer what the name of the variable is (how we will refer to it in our code) and what datatype it will be.
+				This lets the computer know in advance how much space to reserve for it: if we declare a byte type variable called x, it knows it only needs to allocate 8 bits of memory for it.
+				In some languages, however, we don't even need to tell the computer what type a variable will be: it will figure it out from context.
+				In Java, I might declare a variable which stores the number of cats like so:
+			</p>
+			<div  class="codeinset"><code>int numCats;</code></div>
+			<p>
+				Now, the computer knows that the variable <code>numCats</code> will be an int type (32 bit integer) variable, and can allocate the necessary space for it.
+			</p>
+			<p>
+				The next logical thing to learn to do is to set the value of a variable. We do this with the <i>assignment operator</i>, which in most languages is '='.
+				We can either do variable assignment after the declaration, or at the exact same time.
+				As another example in Java, we could have the following code:
+			</p>
+			<div class="codeinset">
+				<code>int x;</code><br>
+				<code>x = 5;</code>
+			</div>
+			<p>or we could have:</p>
+			<div class="codeinset">
+				<code>int x = 5;</code>
+			</div>
+			<p>
+				Either would be acceptable ways to declare the integer x and assign it to 5.
+				The only difference is that the first way uses two <i>statements</i>, which are a single instruction or line of code, while the second way only uses one.
+				Computer code is essentially made up of many many individual statements, which each do one small thing.
+				The computer <i>executes</i> (meaning it conducts the actions the statement directs it to) the statements starting from the top of the program, going statement by statement until it reaches the end, barring special structures like conditionals and loops, which we'll learn about later.
+				Together, these small individual actions combine as algorithms which can do powerful things.
+				Different programming languages use different <i>syntax</i>, which is like the grammar and punctuation of programming, to indicate what is a statement, but the concept remains the same.
+				Finally, note that when using the assignment operator, the value on the right is assigned to the variable on the left.
+			</p>
+		</h3>
+		
+		<h2>Operators</h2>
+		
+		<h3>
+			<p>
+				Above, we learned about the assignment operator '=', which allows us to set the value of a variable.
+				Now, we will want to manipulate that value, and we'll do so using <i>operators</i>.
+				To simplify a bit, an operator is essentially an instruction for what to do with some number of <i>operands</i>.
+				A <i>binary</i> operator acts on two operators, while a <i>unary</i> operator acts on only one.
+				In programming, there are a few common operators which fall into the following categories: arithmetic, relational, logical, unary, and bitwise/bitshift.
+				I'm going to skip the bitwise/bitshift operators right now, because I already covered them in the <a href="binary-numbers.html">binary numbers</a> page.
+			</p>
+			<p><u>Arithmetic Operators</u></p>
+			<p>
+				Whether you recognize it or not, you already know the arithmetic operators.
+				These are operators such as <span class="nowrap">addition (+)</span>, <span class="nowrap">subtraction (-)</span>, <span class="nowrap">multiplication (*)</span>, and <span class="nowrap">division (/)</span>.
+				I will assume that you already know how these work.
+				You may or may not know the last one, <span class="nowrap"><a href="https://en.wikipedia.org/wiki/Modular_arithmetic">modulus</a> (%)</span>, though, so I will explain it.
+			</p>
+			<p>
+				One way to think of modulus is as the 'remainder operator'.
+				Just as the division problem <span class="nowrap">13 / 4</span> will yield 3.25, <span class="nowrap">13 % 4</span> <span class="nowrap">('thirteen modulus 4')</span> yields 1, because the remainder was 1.
+				If a number divides evenly into another number, the modulus will be 0: <span class="nowrap">42 % 7 = 0</span> because <span class="nowrap">7 * 6 = 42</span>; in other words, because 42 divides evenly by 7 to yield 6 and 0 left over, the modulus is 0.
+				Similarly, <span class="nowrap">12 / 7 = 1 remainder 5</span>, which is equal to 1 and 5 sevenths.
+				If we were to do <span class="nowrap">12 % 7</span>, the result would be 5, because the remainder of the division problem is 5.
+			</p>
+			<p>
+				The other way to think of modulus is where numbers 'reset' after reaching a certain value, or 'wrap around'.
+				For example, if I wanted to do 12 modulus 7, I would start counting up from 1 to 12, but when I run across 7, I reset to 0.
+				My counting would look like this: 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5. Thus 12 modulus 7 equals 5. Here's what counting to 20 looks like, modulus 4:
+			</p>
+		</h3>
+		<table>
+			<tr>
+				<th>Normal Counting:</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+				<td>14</td>
+				<td>15</td>
+				<td>16</td>
+				<td>17</td>
+				<td>18</td>
+				<td>19</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<th>Counting Modulus 4:</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>0</td>
+			</tr>
+		</table>
+		<h3>
+			<p>
+				A familiar example of modulus from your everyday life is a clock.
+				A clock counts modulus 12, because when you get to 12, you actually reset to 0.
+				When you convert from miliary time to civilian time, you are really dividing military time by 12 and taking the remainder. 14 o'clock is <span class="nowrap">14 % 12 = 2</span> o'clock.
+			</p>
+			<p><u>Relational Operators</u></p>
+			<p>
+				You probably already know the relational operators, so I'm just going to give them a quick once-over.
+				Relational operators compare values and determine which is greater or lesser.
+				<i>Unlike in math, these operators don't just tell us a fact about size comparisons; these are fully fledged operators and return an answer, like any other operator.</i>
+				The operator will return a True (1) or a False (0) value, depending on if the statement they are in is true or false.
+				So for example, <code>5 &lt; 3</code> will return false or 0, because clearly 5 is actually greater than 3, not less than it.
+				It's very important to stress that to the computer, a true/false value and a 1/0 value are both represented as a single bit of data which can be 1 or 0.
+				They are interchangeable in most situations.
+			</p>
+			<p>
+				There are size relational operators: less than (&lt;), less than or equal to (&le; or &lt;=), greater than (&gt;), greater than or equal to (&ge; or &gt;=), equals (==), and not equals (!=).
+				Note that we normally write less than or equal to as '&lt;=' and greater than or equal to as '&gt;='.
+				Also note that when we want to test if two things are equal (remember that we'll receive a 1 (true) or 0 (false) value back) we have to use a double equals sign.
+				This is because the single equals is already reserved for assignment.
+				<code>x = 5</code> uses the assignment operator and will set the variable x to be 5, while <code>x == 5</code> uses the equality comparison operator and will evaluate to 1 (true) if x is indeed equal to 5, and it will evaluate to 0 (false) otherwise.
+			</p>
+			<p><u>Logical Operators</u></p>
+			<p>
+				There are three main logical operators: AND, OR, and NOT.
+				Like the relational operators, they return a true or false value based on their operands' values.
+				However, they differ in that where the relational operators operate on integers, they operate on true and false values.
+				
+				I'll first explain what each one does, then show you a <i>truth table</i> for each one.
+				A truth table is a table which shows the output of a logical operation given some certain inputs.
+				It works similar to a times table, where the top and left columns represent the operands, while the interior represents the results.
+			</p>
+			<p>
+				AND (sometimes represented as &&) evaluates to true if both of its operands are 1 (true), and evaluates to false for any other case.
+			</p>
+		</h3>
+		<table>
+			<tr>
+				<th>&&</td>
+				<th>True</td>
+				<th>False</td>
+			</tr>
+			<tr>
+				<th>True</td>
+				<td>True</td>
+				<td>False</td>
+			</tr>
+			<tr>
+				<th>False</td>
+				<td>False</td>
+				<td>False</td>
+			</tr>
+		</table>
+		<h3>
+			<p>
+				As you can see, <code>True && True = True</code>, <code>True && False = False</code>, <code>False && True = False</code>, and <code>False && False = False</code>.
+			</p>
+			<p>
+				OR (sometimes represented as ||) evaluates to false if both of its operands are 0 (false), and evaluates to true for any other case.
+				In this way, it is like the inverse of AND.
+			</p>
+		</h3>
+		<table>
+			<tr>
+				<th>||</td>
+				<th>True</td>
+				<th>False</td>
+			</tr>
+			<tr>
+				<th>True</td>
+				<td>True</td>
+				<td>True</td>
+			</tr>
+			<tr>
+				<th>False</td>
+				<td>True</td>
+				<td>False</td>
+			</tr>
+		</table>
+		<h3>
+			<p>
+				As you can see, <code>True && True = True</code>, <code>True && False = True</code>, <code>False && True = True</code>, and <code>False && False = False</code>.
+			</p>
+			<p>
+				NOT (sometimes represented as !) is also called the <i>logical complement</i>. It is a unary operator, meaning it operates on only one value.
+				NOT flips the value of whatever it is applied to, so NOT True becomes False and NOT False becomes True.
+			</p>
+		</h3>
+		<table>
+			<tr>
+				<th>Input</td>
+				<th>True</td>
+				<th>False</td>
+			</tr>
+			<tr>
+				<th>!Input</td>
+				<td>False</td>
+				<td>True</td>
+			</tr>
+		</table>
+		<h3>
+			<p><u>Unary Operators</u></p>
+			<p>
+				There are a few operators which operate on only one value which are important to talk about.
+				They don't appear in all languages, but they are important in the ones they do appear in.
+				They are: minus/negate (-), increment (++), and decrement(--).
+			</p>
+			<p>
+				Minus does exactly what it says it does. It takes the value you give it and returns -1 times that value. So if x is equal to 5, <code>-x</code> returns -5.
+			</p>
+			<p>
+				Increment and decrement are <i>shorthand operators</i>, meaning they take a longer operation and make it shorter to write out.
+				Increment simply results in the value plus one, while decrement results in the value minus one.
+				So if x is equal to 17, <code>x++</code> equals 18, and <code>x--</code> equals 16.
+			</p>
+		</h3>
+		
+		<h2>Concatenation</h2>
+		
+		<h3>
+			<p>
+				Concatenation is concept which very similar to the addition operator, but instead of acting on numbers, it acts on strings.
+				Concatenation allows the joining of many strings together to create a larger string.
+				Normally, concatenation uses the '+' operator.
+				Let's look at some examples:
+			</p>
+			<div class="codeinset">
+				<code>"Hello" + " " + "World" = "Hello World"</code><br>
+				<code>"My " + "name " + "is " + "[redacted]." = "My name is [redacted]."</code>
+			</div>
+			<p>
+				The first thing to notice is that strings are contained within quotes (").
+				In the first example, we have a string saying "Hello", and then we add it to a string containing a single space character, and then we add "World" to that.
+				This, predictably, results in the string <span class="nowrap">"Hello World".</span>
+				The second example is also very self-explanatory.
+			</p>
+			<p>
+				But now we run into a conundrum: if strings are enclosed by quotes, how do we put a quote <i>inside</i> a string? We do this using <i>escape characters</i>.
+				An <a href="https://en.wikipedia.org/wiki/Escape_character">escape character</a> is normally written with a backslash (\) and then a specific character, which then becomes a new character.
+				It's similar to the character encoding we discussed above. Some examples of escape characters:
+			</p>
+			<div class="codeinset">
+				<code>"\"We should take a trip\"," + " " + " he said." = "We should take a trip", he said.</code><br>
+				<code>"\'X\' " + "is " + "my " + "favorite " + "letter." = 'X' is my favorite letter.</code>
+			</div>
+			<p>
+				For this example, I used concatenation, escape characters, and enclosed my strings on the left side, while on the right side I wrote the result in plain text.
+				There are many escape characters, but here is a list of the most useful ones:
+			</p>
+			<p>
+				- \" represents a quotation mark (").<br>
+				- \' represents an apostrophe (').<br>
+				- \\ represents a backslash (\).<br>
+				- \t represents a tab character, which is like hitting the <kbd>TAB</kbd> key.<br>
+				- \n represents a '<a href="https://en.wikipedia.org/wiki/Newline">newline</a>' character, which is like hitting the <kbd>ENTER</kbd> key.<br>
+				- \b represents a backspace character, which is like hitting the <kbd>BACKSPACE</kbd> key.<br>
+				- \r represents a '<a href="https://en.wikipedia.org/wiki/Carriage_return">carriage return</a>', which returns the cursor to the beginning of the line.<br>
+			</p>
+		</h3>
+		
+		<h2>Casting</h2>
+		
+		<h3>
+			<p>
+				Casting, where a value represented in one datatype is converted to another equivalent value represented by a different datatype, is an important concept to understand.
+				In some languages, your program might require you to have a value in a certain type.
+				This might require turning an int into a double or a double into an int (note that if we convert a double, such as 5.492, into an int, it will become just 5, and we'll lose some data precision).
+				We might also have to turn a character into its numeric ASCII representation or vice versa, or likewise with its unicode representation.
+				We could have to turn an int into a string (so the number 10 becomes the string "10"), or back (so the string "15" becomes the int 15).
+				There are many possibilities, so being aware of this concept may come in useful when you are programming.
+			</p>
+		</h3>
+		
+		<h2>Expressions</h2>
+		
+		<h3>
+			<p>
+				Now that we've learned about datatypes, variables, and operators, we're ready to learn about expressions.
+				Expressions in CS (Computer Science) are very similar to expressions in math, in that they are a mix of values and operations which need to be 'evaluated' to give a final result.
+				Like mathematical expressions, they have a specific order of operations which is an internationally-recognized standard of which operations take precedence over which others.
+				In math, you probably learned about PEMDAS (Parenthesis, Exponentiation, Multiplication/Division, Addition/Subtraction) and evaluating from left to right.
+				In computer science, it's pretty much the same order, but with some additional operators.
+				A good reference on CS order of operations is <a href="https://www.computerhope.com/jargon/o/order-of-operations.htm">this</a> page, particularly the section on C's order of operations (C is a programming language).
+				Don't worry about the operations you don't know about yet.
+				As the page says, some languages require programmers to define an order of operations, or simply go left to right; however, most languages have an order of operations similar to C's.
+			</p>
+			<p>
+				The best way to learn expressions is just to try a bunch of them.
+				So <a href="expressions-practice.html">here</a> is a large list of sample expressions and explanations for you to peruse at your leisure.
+			<p>
+		</h3>
+		
+		<h2>De Morgan's Law</h2>
+		
+		<h3>
+			<p>
+				If you look at the <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws">wikipedia page for De Morgan's Law</a> you will be likely very confused and somewhat intimidated.
+				However, it is really quite simple.
+				De Morgan's law essentially tells us what happens when we take an expression, such as
+				<code>a AND b &lt; c</code>,
+				and stick a NOT in front of the whole thing, like so:
+				<code>NOT (a AND b &lt; c)</code>.
+				What we have to do is systematically go through the expression, replacing each relational or logical operator with its inverse.
+				So <code>NOT (a AND b &lt; c) = (a OR b &gt;= c)</code>.
+				Here's a handy chart of each operator we need to replace and its inverse:
+			</p>
+		</h3>
+		<table>
+			<tr>
+				<th>Operator</th>
+				<th>Inverse</th>
+			</tr>
+			<tr>
+				<td>AND</td>
+				<td>OR</td>
+			</tr>
+			<tr>
+				<td>OR</td>
+				<td>AND</td>
+			</tr>
+			<tr>
+				<td>NOT</td>
+				<td>NOT</td>
+			</tr>
+			<tr>
+				<td>&gt;</td>
+				<td>&lt;=</td>
+			</tr>
+			<tr>
+				<td>&lt;</td>
+				<td>&gt;=</td>
+			</tr>
+			<tr>
+				<td>&gt;=</td>
+				<td>&lt;</td>
+			</tr>
+			<tr>
+				<td>&lt;=</td>
+				<td>&gt;</td>
+			</tr>
+			<tr>
+				<td>==</td>
+				<td>!=</td>
+			</tr>
+			<tr>
+				<td>!=</td>
+				<td>==</td>
+			</tr>
+		<table>
+		<h3>
+			<p>
+				Some examples:
+			</p>
+			<div class="codeinset">
+				<code>NOT(y &gt; x OR a &lt; b) becomes (y &lt;= x AND a &gt;= b)</code><br>
+				<code>NOT(numDogs != numCats) becomes (numDogs == numCats)</code><br>
+				<code>NOT(vec1 &gt; vec2 AND vec3 &gt;= vec4) becomes (vec1 &lt;= vec2 OR vec3 &lt; vec4)</code><br>
+			</div>
+		</h3>
+		
+		<h2>Multidimensional Datastructures</h2>
+		
+		<h3>
+			<p>
+				The last thing I want to touch on briefly is the idea of a <i>multidimensional</i> datastructure.
+				This is what results from nesting a datastructure inside another datastructure; for example, making an array of arrays of ints.
+				If you want to visualize it with an analogy, you might have a large stage, representing the top-level array.
+				On it are a number of tables, each labeled with their index number in the top-level array.
+				Each table has a number of cups on it, which are also labeled with their index numbers.
+				Inside each cup is a value.
+			</p>
+			<p>
+				When we wanted to point to a specific value in our single-dimensional array, we simply used the index as our key.
+				In our 2D array, things get slightly more complicated.
+				Each table has an index, and each cup on each table has an index.
+				So to refer to the third cup on the second table, we should refer to the cup with index 2 on the table with index 1
+				(remember that arrays are 0-indexed, so the 5th element has an index of 4).
+			</p>
+			<p>
+				In a similar vein, we could conceptualize a dictionary with dictionaries inside it, or even a dictionary with arrays inside of it.
+				Our stage could be a dictionary, filled with tables (arrays) which each are labeled with their string-type key, and those tables have indexed cups on them.
+				We could even think of a 3D structure, or an array filled with arrays filled with arrays filled with something.
+				The possibilies are pretty much endless.
+			</p>
+		</h3>
+		
+		<h2>In Conclusion</h2>
+		
+		<h3>
+			<p>
+				So today we learned:<br>
+				- Binary numbers are how computers store data.<br>
+				- Algorithms are sets of instructions which manipulate data.<br>
+				- Datatypes are various ways of representing/storing data. <br>
+				- Primitive datatypes are those which are built in to a specific programming language.<br>
+				- Data structures are ways to organize data so we can store, modify, and retrieve it.<br>
+				- Arrays/Vectors and Dictionaries/Maps are datastructures which use a key-value organizational scheme.<br>
+				- Array keys are integers, while dictionary keys are strings.<br>
+				- Strings are arrays of characters.<br>
+				- Variables allow us to modify the values of data within our code.<br>
+				- In CS, we use Arithmetic, Relational, Logical, Unary, and Bitwise operators.<br>
+				- Concatenation is like addition, but for strings.<br>
+				- Escape characters allow us to represent certain reserved characters, such as " or '.<br>
+				- Casting allows us to change a value stored as one datatype into an equivalent value stored as another datatype.<br>
+				- Expressions are combinations of values and operators which can be evaluated using operator precedence (order of operations).<br>
+				- De Morgan's Law guides us on how to change an expression with a NOT at the front.<br>
+				- We can nest datastructures inside other datastructures to make multidimensional datastructures.
+			</p>
+			<p>
+				Thank you for reading through this, and I hope you learned something.
+				Next, please check out the <a target="_self" href="control-structures.html">Control Structures</a> page.
+			</p>
+		</h3>
+		<hr>
+		<h4><p><a target="_self" href="../index.html">Home</a>&emsp;&emsp;&emsp;&emsp;<a target="_self" href="#">Back to Top</a></p></h4>
+	</div>
+</body>
+
+</html>

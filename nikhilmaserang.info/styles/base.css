@@ -1,0 +1,100 @@
+body
+{
+	background-image: url("../resources/background.png");
+	font-family:'Helvetica';
+	color: #FFFFFF;
+	text-align: left;
+}
+
+#bodycontent
+{
+	width: 80%;
+	margin: auto;
+	
+	line-height: 1.5;
+	padding: 0px 10px;
+}
+
+.nowrap
+{
+	white-space: nowrap;
+}
+
+.reveal
+{
+	color: #f2f2f2;
+	cursor: pointer;
+}
+
+.reveal:hover
+{
+	color: #000000;
+}
+
+.centered
+{
+	text-align: center;
+}
+
+hr
+{
+	background: white;
+}
+
+kbd
+{
+	display: inline-block;
+	padding: 0px 4px;
+	
+	background-color: #444444;
+	
+	border-radius: 3px;
+	border: 1px solid #777777;
+	
+	box-shadow: 0px 2px 1px rgba(255,255,255,1);
+}
+
+kbd:hover
+{
+	cursor: pointer;
+}
+
+kbd:active
+{
+	cursor: pointer;
+	box-shadow: 0px 1px 1px rgba(255,255,255,1);
+	transform: translate(0px, 2px);
+}
+
+a:link
+{
+	color: #FFFFFF;
+}
+
+a:visited
+{
+	color: #FFFFFF;
+}
+
+a:hover
+{
+	color: #6600cc;
+}
+
+a:active
+{
+	color: #8600b3;
+}
+
+#music_list
+{
+	text-decoration: none;
+}
+#music_list:hover
+{
+	color: #FFFFFF;
+}
+#music_list:active
+{
+	color: #FFFFFF;
+}

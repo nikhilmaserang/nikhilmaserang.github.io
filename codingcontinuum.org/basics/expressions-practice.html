@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="shortcut icon" href="../resources/favicon.jpg">
+	<title>Expressions Practice</title>
+	
+	<link rel="stylesheet" type="text/css" href="../styles/base.css">
+	<link rel="stylesheet" type="text/css" href="../styles/scrollbar.css">
+	<base target="_blank">
+</head>
+
+<body>
+	<div id="bodycontent">
+	
+		<br>
+		<h4><p><a target="_self" href="../index.html">Home</a></p></h4>
+		<h1>Expressions Practice</h1>
+		<hr>
+
+		<h3>
+			<p>
+				Chart of C order of operations: <a href="https://www.computerhope.com/jargon/o/order-of-operations.htm">here</a>.<br>
+				Explanations are at the bottom of this page.
+			</p>
+			<p>
+				Order of Operations:<br>
+				1: Unary (Increment, Decrement, Negate)<br>
+				2: Parenthesis<br>
+				3: Multiplication, Division, Modulo<br>
+				4: Addition, Subtraction<br>
+				5: Relational Operators<br>
+				6: Logical Operators
+			</p>
+		</h3>
+		
+		<h2>Expressions:</h2>
+		
+		<h3>
+			<p>
+				Assume that:<br>
+				- x equals 3<br>
+				- y equals 4<br>
+				- u equals true<br>
+				- v equals false<br>
+				for all of these expressions. Remember that true and 1 are equivalent, and likewise false and 0 are equivalent.</p>
+		<!-- Five using PEMDAS -->
+		<!-- Five using PEMDAS with relational operators -->
+		<!-- Five using PEMDAS with relational and logical operators -->
+		<!-- Five using everything and the increment/decrement/negate operators -->
+			<div class="codeinset">
+				<code>A1) 10 = 5 + 2 * 4 - 3</code><br>
+				<code>A2) 14 = (5 + 2) * 6 / 3</code><br>
+				<code>A3) 23 = 10 / 2 + 12 / 2 * 3</code><br>
+				<code>A4) -1 = 4 * 2 + (6 + 3 * (7 - 4)) - 3 * 8</code><br>
+				<code>A5) -6 = 6 + 9 * (2 + 4) - (47 + 19)</code><br>
+				<br>
+				<code>B1) &nbsp;1 = x - 3 &lt; y + 4</code><br>
+				<code>B2) &nbsp;0 = (x + 7) / 5 + 4 > y * (7 + x)</code><br>
+				<code>B3) &nbsp;5 = (x + (2 * y - x) * y &lt;= y * 6 - 1) * 5</code><br>
+				<code>B4) &nbsp;1 = x + y + (x * y) >= 7 + x * (5 - 2) / (2 * y)</code><br>
+				<code>B5) &nbsp;6 = (x + 1 == y) * (4 + 5 / (y + 1)) - x + y</code><br>
+				<br>
+				<code>C1) &nbsp;0 = u AND v == u OR v</code><br>
+				<code>C2) &nbsp;1 = v == (NOT u) OR v</code><br>
+				<code>C3) &nbsp;1 = (u AND x &lt; y) OR (y &gt; x * 3)</code><br>
+				<code>C4) 10 = 2 * y - (1 - x) * (u OR v AND u)</code><br>
+				<code>C5) 13 = ((u != v) AND u) + x * y</code><br>
+				<br>
+				<code>Bonus:&nbsp;0 = x++ != y OR y-- != x</code><br>
+			</div>
+		</h3>
+		
+		<h2>Explanations:</h2>
+		
+		<h3>
+			<p>
+				General advice: the first thing I do when I see an expression is format it to make it more readable.
+				For example, if I see multiplication or division, such as <code>5 * 8</code>, I'll squish it together: <code>5*8</code>.
+				If I see a logical or relational operator, I'll put the two operands in parenthesis to make them really clear.
+				If I see a negative before a parenthesis, I'll distribute it and turn it into a positive.
+				Little things like that can save you a lot of confusion when programming.
+			</p>
+			<p>
+				<u>A1</u>: <code>5 + 2 * 4 - 3</code><br>
+				Firstly, let's group the multiplication: <code>5 + 2*4 - 3</code>.
+				Now, evaluate the multiplication first: <code>5 + 8 - 3</code>.
+				Then, evaluate everything from left to right: <code>13 - 3 = 10</code>.
+			</p>
+			<p>
+				<u>A2</u>: <code>(5 + 2) * 6 / 3</code><br>
+				Evaluate the parenthesis: <code>7 * 6 / 3</code>.
+				Next, evaluate from left to right: <code>42 / 3 = 14</code>.
+			</p>
+			<p>
+				<u>A3</u>: <code>10 / 2 + 12 / 2 * 3</code><br>
+				First, group the multiplication/division: <code>10/2 + 12/2*3</code>.
+				Now we'll evaluate those clumps from left to right: <code>5 + 18</code>.
+				Finally, add to get 23.
+			</p>
+			<p>
+				<u>A4</u>: <code>4 * 2 + (6 + 3 * (7 - 4)) - 3 * 8</code><br>
+				Evaluate the innermost parenthesis and group the multiplication: <code>4*2 + (6 + 3*3) - 3*8</code>.
+				Now, evaluate the multiplication: <code>8 + (6 + 9) - 24</code>.
+				Lastly, evaluate the parenthesis and addition/subtraction: <code>8 + 15 - 24 = 23 - 24 = -1</code>.
+			</p>
+			<p>
+				<u>A5</u>: <code>6 + 9 * (2 + 4) - (47 + 19)</code><br>
+				First, evaluate the parenthesis and group multiplication: <code>6 + 9*6 - 66</code>.
+				Now, multiply and then evaluate from left to right: <code>6 + 54 - 66 = 60 - 66 = -6</code>.
+			</p>
+			<p>
+				<u>B1</u>: <code>x - 3 &lt; y + 4</code><br>
+				Firstly, evaluate x - 3 and y + 4 (you can put parenthesis around them if it helps you visualize it better): <code>(x - 3) &lt; (y + 4)</code>.
+				Because x equals 3 and y equals 4, we end up with <code>0 &lt; 8</code>, which is True, so the result is True or 1.
+			</p>
+			<p>
+				<u>B2</u>: <code>(x + 7) / 5 + 4 > y * (7 + x)</code><br>
+				Evaluate parenthesis and group multiplication/division: <code>(10)/5 + 4 > y*(10)</code>.
+				Next, evaluate the multiplication/division: <code>2 + 4 > 40</code>.
+				Clearly 6 is not greater than 40, so the result is False or 0.
+			</p>
+			<p>
+				<u>B3</u>: <code>(x + (2 * y - x) * y &lt;= y * 6 - 1) * 5</code><br>
+				Group multiplication: <code>(x + (2*y - x)*y &lt;= y*6 - 1) * 5</code>. Evaluate it: <code>(x + (8 - x)*y &lt;= 24 - 1) * 5</code>.
+				Evaluate everything else: <code>(3 + (8 - 3)*4 &lt;= 23) * 5</code>.
+				Now, we have <code>(23 &lt;= 23) * 5</code>, and the relational &lt;= operator evaluates to True, so we have <code>1 * 5 = 5</code>.
+			</p>
+			<p>
+				<u>B4</u>: <code>x + y + (x * y) >= 7 + x * (5 - 2) / (2 * y)</code><br>
+				Substitute in your variables and group your multiplication: <code>3 + 4 + (3*4) >= 7 + 3*(5 - 2) / (2*4)</code>.
+				Evaluate parenthesis: <code>3 + 4 + 12 >= 7 + 3*3 / 8</code>.
+				Go left to right: <code>19 >= 7 + 9/8</code>.
+				Clearly the answer is True or 1.
+			</p>
+			<p>
+				<u>B5</u>: <code>(x + 1 == y) * (4 + 5 / (y + 1)) - x + y</code><br>
+				Substitute and evaluate the parenthesis first: <code>(3 + 1 == 4) * (4 + 5/5) - 3 + 4</code>.
+				3 + 1 obviously equals True, so that mini expression evaluates to 1: <code>1 * (4 + 1) + 1</code>.
+				Finish evaluation: <code>5 + 1 = 6</code>.
+			</p>
+			<p>
+				<u>C1</u>: <code>u AND v == u OR v</code><br>
+				This one is tricky. Relational operators come before logical operators, so it really looks like this: <code>u AND (v == u) OR v</code>.
+				Substituting in: <code>True AND (False == True) OR False --> True AND False OR False</code>.
+				Last evaluation: <code>False OR False --> False</code>.
+			</p>
+			<p>
+				<u>C2</u>: <code>v == (NOT u) OR v</code><br>
+				I think you get the idea now so I'm going to leave off the commentary and just put the steps.<br>
+				<div class="codeinset">
+					<code>False == False OR False</code><br>
+					<code>False == False</code><br>
+					<code>True</code>
+				</div>
+			</p>
+			<p>
+				<u>C3</u>: <code>(u AND x &lt; y) OR (y &gt; x * 3)</code><br>
+				<div class="codeinset">
+					<code>(True AND 3 &lt; 4) OR (4 &gt; 3*3)</code><br>
+					<code>(True AND True) OR (4 &gt; 9)</code><br>
+					<code>True OR False</code><br>
+					<code>True</code><br>
+				</div>
+			</p>
+			<p>
+				<u>C4</u>: <code>2 * y - (1 - x) * (u OR v AND u)</code><br>
+				<div class="codeinset">
+					<code>2*4 - (1 - 3)*(True OR False AND True)</code><br>
+					<code>8 - -2*(True AND True)</code><br>
+					<code>8 + 2*1</code><br>
+					<code>10</code><br>
+				</div>
+			</p>
+			<p>
+				<u>C5</u>: <code>((u != v) AND u) + x * y</code><br>
+				<div class="codeinset">
+					<code>((True != False) AND True) + 3*4</code><br>
+					<code>(True AND True) + 12</code><br>
+					<code>1 + 12</code><br>
+					<code>13</code><br>
+				</div>
+			</p>
+			<p>
+				<u>Bonus</u>: <code>x++ != y OR y-- != x</code><br>
+				<div class="codeinset">
+					<code>x++ != y OR y-- != x</code><br>
+					<code>3 + 1 != 4 OR 4 - 1 != 3</code><br>
+					<code>False OR False</code><br>
+					<code>False</code><br>
+				</div>
+			</p>
+		</h3>
+		<hr>
+		<h4><p><a target="_self" href="../index.html">Home</a>&emsp;&emsp;&emsp;&emsp;<a target="_self" href="#">Back to Top</a></p></h4>
+	</div>
+</body>
+
+</html>

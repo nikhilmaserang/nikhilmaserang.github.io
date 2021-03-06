@@ -1,0 +1,113 @@
+/* animation: fadein 2s classdelayseconds 1 both; */
+
+/* Set the animation */
+@keyframes fadein {
+	0%   {opacity: 0.0;}
+	100% {opacity: 1.0;}
+}
+
+/* Bind the animation to each class */
+.animate0
+{
+	animation: fadein 2s 0s 1 both;
+}
+
+.animate1
+{
+	animation: fadein 2s 0.1s 1 both;
+}
+
+.animate2
+{
+	animation: fadein 2s 0.2s 1 both;
+}
+
+.animate3
+{
+	animation: fadein 2s 0.3s 1 both;
+}
+
+.animate4
+{
+	animation: fadein 2s 0.4s 1 both;
+}
+
+.animate5
+{
+	animation: fadein 2s 0.5s 1 both;
+}
+
+.animate6
+{
+	animation: fadein 2s 0.6s 1 both;
+}
+
+.animate7
+{
+	animation: fadein 2s 0.7s 1 both;
+}
+
+.animate8
+{
+	animation: fadein 2s 0.8s 1 both;
+}
+
+.animate9
+{
+	animation: fadein 2s 0.9s 1 both;
+}
+
+.animate10
+{
+	animation: fadein 2s 1s 1 both;
+}
+
+.animate11
+{
+	animation: fadein 2s 1.1s 1 both;
+}
+
+.animate12
+{
+	animation: fadein 2s 1.2s 1 both;
+}
+
+.animate13
+{
+	animation: fadein 2s 1.3s 1 both;
+}
+
+.animate14
+{
+	animation: fadein 2s 1.4s 1 both;
+}
+
+.animate15
+{
+	animation: fadein 2s 1.5s 1 both;
+}
+
+.animate16
+{
+	animation: fadein 2s 1.6s 1 both;
+}
+
+.animate17
+{
+	animation: fadein 2s 1.7s 1 both;
+}
+
+.animate18
+{
+	animation: fadein 2s 1.8s 1 both;
+}
+
+.animate19
+{
+	animation: fadein 2s 1.9s 1 both;
+}
+
+.animate20
+{
+	animation: fadein 2s 2s 1 both;
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="shortcut icon" href="../resources/favicon.jpg">
+	<title>Procedural Programming</title>
+	
+	<link rel="stylesheet" type="text/css" href="../styles/base.css">
+	<link rel="stylesheet" type="text/css" href="../styles/scrollbar.css">
+	<base target="_blank">
+</head>
+
+<body>
+	<div id="bodycontent">
+	
+		<br>
+		<h4><p><a target="_self" href="../index.html">Home</a></p></h4>
+		<h1>Procedural Programming</h1>
+		<hr>
+		
+		<h3><p>Please note that any code on this page is <a href="https://economictimes.indiatimes.com/definition/pseudocode"><i>pseudocode</i></a>, meaning it won't work in any actual programming language.</p></h3>
+		
+		<h2>Functions</a>
+		
+		<h3>
+			<p>
+				The first idea we need to explore is that of a <i>function</i>, which is sometimes called a <i>method</i>, <i>subroutine</i>, or <i>procedure</i> when used in a CS (Computer Science) context.
+				A function is a mapping between inputs and outputs; it is a set of instructions which dictate what should be done to a set of inputs to create the corresponding set of outputs.
+			</p>
+			<p>
+				In math, you've likely encountered functions which take in a single input and return a single output; some commonly recognized examples would be trigonometric or logarithmic functions: sin(x), cos(x), ln(x), etc.
+				We can also define our own functions using function notation, like this: f(x) = x^2, g(x) = 2x - 3, h(x) = 3sin(2&pi;x).
+			</p>
+			<p>
+				Similarly, in CS we can <i>define</i> our own functions which accept data in the form of variables, called <i>parameters</i>.
+				We can then use statements and control structures to dictate what should be done to the parameters to obtain our output values, known as <i>return values</i>.
+				Some languages restrict functions to only have one return value, while in others we can have an arbitrary amount of return values.
+				We can then use these defined functions elsewhere in our code.
+			</p>
+			<p>
+				The main benefit of using functions while programming is that you can write code to perform some task once, and then reuse it an indefinite amount of times.
+			</p>
+		</h3>
+		
+		<h2>A Simple Example</h2>
+		
+		<h3>
+			<div class="codeinset">
+				<code>FUNCTION addSeven(inputNumber):</code><br>
+				<code>{</code><br>
+				<code>&emsp;&emsp;outputNumber = inputNumber + 7;</code><br>
+				<code>&emsp;&emsp;return outputNumber</code><br>
+				<code>}</code><br>
+			</div>
+			<p>
+				In the example above, the <code>function</code> keyword tells the computer that the following code block is the body of a function.
+				Right after the keyword is the name of the function, <code>addSeven</code>, and in parenthesis the parameters which the function will accept; in this case, there is only one: <code>inputNumber</code>.
+				The body of the function contains two statements, the first of which assigns the value of the expression <code>inputNumber + 7</code> to the variable outputNumber.
+				The second statement starts with the <code>return</code> keyword, which basically alerts the computer that whatever expression follows it should be the returned value (should be the output).
+			</p>
+			<p>
+				In fact, we could actually shorten this code even further by combining the two statements in the body into a single statement:
+			</p>
+			<div class="codeinset">
+				<code>FUNCTION addSeven(inputNumber):</code><br>
+				<code>{</code><br>
+				<code>&emsp;&emsp;return inputNumber + 7</code><br>
+				<code>}</code><br>
+			</div>
+			<p>
+				What we've done is eliminated the middleman.
+				Because the <code>return</code> keyword signals that the entire expression to its right should be returned, we can remove the <code>outputNumber</code> variable and simply put its value as the expression to be returned.
+			</p>
+			<p>
+				Now that we have a nice, clean example function defined, let's use it!
+				Because our function deals with numeric datatypes, it makes the most sense to use it in an expression, so let's try to evaluate <code>15 - addSeven(2)</code>.
+			</p>
+			<p>
+				The first step will be evaluating the term <code>addSeven(2)</code>, which is known as a <i>function call</i>.
+				In a function call, we <i>pass</i> a value (or a variable, which represents a value) to the function, and the function <i>returns</i> an output value based on what value was sent to it.
+				In this case, the function takes the input number, adds seven, and then returns it, so if the input is 2, the output will be 9.
+				Hence the whole expression will evaluate to <code>15 - 9 = 6</code>.
+			</p>
+		</h3>
+		
+		<h2>Another Example</h2>
+
+		<h3>
+			<div class="codeinset">
+				<code>FUNCTION sum(num1, num2):</code><br>
+				<code>{</code><br>
+				<code>&emsp;&emsp;outputNumber = num1 + num2</code><br>
+				<code>&emsp;&emsp;return outputNumber</code><br>
+				<code>}</code><br>
+			</div>
+			<p>
+				Here we have a function, called <code>sum</code>, which accepts two parameters, <code>num1</code> and <code>num2</code>.
+				Notice that when we have multiple parameters, they are notated as a comma-separated list.
+				The function assigns the sum of those two parameters to the variable <code>outputNumber</code>, and then returns that value.
+				As before, we can eliminate the middleman to change the function to this:
+			</p>
+			<div class="codeinset">
+				<code>FUNCTION sum(num1, num2):</code><br>
+				<code>{</code><br>
+				<code>&emsp;&emsp;return num1 + num2</code><br>
+				<code>}</code><br>
+			</div>
+			<p>
+				Now, let's try it in an expression: <code>sum(5, 6) * sum(2, -5)</code>.
+				This evaluates to <code>11 * -3 = -33</code>. Pretty simple.
+				Let's get a little spicy: <code>sum(addSeven(2), addSeven(-5))</code>.
+				Here, we have the function from the first example, <code>addSeven()</code>, <i>inside</i> our <code>sum()</code> function, as an argument.
+				One thing you'll notice is that when talking about functions, we normally write the function name followed by and open and closed parenthesis.
+				To evaluate this, we'll first evaluate the <code>addSeven()</code> function calls, and then the <code>sum()</code> function.
+				<code>sum(addSeven(2), addSeven(-5)) = sum(9, 2) = 11</code>
+			</p>
+		</h3>
+		
+		<h2>A Challenging Example</h2>
+		
+		<h3>
+			<p>
+				On the <a href="control-structures.html">control structures</a> page, we learned how to use a loop to sum up the values in an array.
+				Let's try to do the same thing, but wrap it in a function, so that we can sum up any array we want, as many times as we want.
+			</p>
+			<div class="codeinset">
+				<code>FUNCTION sumArray(array):</code><br>
+				<code>{</code><br>
+				<code>&emsp;&emsp;int i = 0;</code><br>
+				<code>&emsp;&emsp;int sum = 0;</code><br>
+				<code>&emsp;&emsp;WHILE i &lt; ?:</code><br>
+				<code>&emsp;&emsp;{</code><br>
+				<code>&emsp;&emsp;&emsp;&emsp;sum = sum + array[i];</code><br>
+				<code>&emsp;&emsp;&emsp;&emsp;i = i + 1;</code><br>
+				<code>&emsp;&emsp;}</code><br>
+				<code>&emsp;&emsp;return sum;</code><br>
+				<code>}</code><br>
+			</div>
+			<p>
+				You'll notice that we used our <code>function</code> keyword to alert the computer that the block of code will be a function.
+				The function is named <code>sumArray</code> and accepts one parameter, <code>array</code>.
+				Inside the function we declare two variables, <code>i</code> and <code>sum</code>, and assign them to 0.
+				Then, we have a <code>while</code> loop, inside of which we add the next array value (<code>array[i]</code>) to the running tally <code>sum</code>, and then increase the value of <code>i</code> by one for the next loop iteration.
+				Finally, once the loop is done, we will return the value of the <code>sum</code> variable.
+			</p>
+			<p>
+				However, you'll notice that we've run into a little snag in our <code>while</code> conditional.
+				The problem is that previously, we knew that we had five elements in our array, so the array values went from 0 to 4.
+				However, right now, we don't know exactly how many values the input <code>array</code> will have; if we put in an arbitrary number - say, 5 - we will end up with an <code>IndexOutOfBoundsError</code> if our actual input has a different number of elements.
+			</p>
+			<p>
+				This conveniently gives me an opportunity to talk about <i>built-in functions</i>.
+				These functions are provided by some languages and they allow us to get information such as the number of elements in the array.
+				This is very helpful, because to traverse a general array, we need our <code>i</code> to vary from 0 to the length of the array minus 1.
+				For now, we're going to assume that our programming language has a <code>length()</code> function built in, which tells us the length of an array.
+				Depending on the language the name of the function and how to use it varies slightly, but again, the concept is the important part here.
+				Let's try rewriting our function using our <code>length()</code> built-in function:
+			</p>
+			<div class="codeinset">
+				<code>FUNCTION sumArray(array):</code><br>
+				<code>{</code><br>
+				<code>&emsp;&emsp;int i = 0;</code><br>
+				<code>&emsp;&emsp;int sum = 0;</code><br>
+				<code>&emsp;&emsp;WHILE i &lt; length(array):</code><br>
+				<code>&emsp;&emsp;{</code><br>
+				<code>&emsp;&emsp;&emsp;&emsp;sum = sum + array[i];</code><br>
+				<code>&emsp;&emsp;&emsp;&emsp;i = i + 1;</code><br>
+				<code>&emsp;&emsp;}</code><br>
+				<code>&emsp;&emsp;return sum;</code><br>
+				<code>}</code><br>
+			</div>
+			<p>
+				Our <code>while</code> loop's condition now limits the values of <code>i</code> to go from 0 to one less than the length of the array.
+				Arrays are 0-indexed, so the indicies go from 0 to the length of the array minus one.
+				Therefore, our <code>i</code> value now exactly corresponds with the indicies of the array, which means the loop will traverse the array successfully, with no <code>IndexOutOfBoundsError</code>.
+			</p>
+			<p>
+				Now that we've defined our function, let's use it:
+			</p>
+			<div class="codeinset">
+				<code>arrayOfIntegers = [1, 2, 3, 4, 5];</code><br>
+				<code>int sum = 0;</code><br>
+				<code>sum = sumArray(arrayOfIntegers);</code><br>
+			</div>
+			<p>
+				When we run this code, the variable <code>arrayOfIntegers</code> refers to the list of numbers from 1 to 5.
+				Next, the int type variable <code>sum</code> is initialized to 0 (we say a variable is initialized to some value if we declare it and assign it to that value at the same time).
+				The last line will set <code>sum</code> to whatever value is to the right of the assignment operator.
+				In this case, that value is whatever is returned by the <code>sumArray()</code> function when we pass in <code>arrayOfIntegers</code> as the argument, which will be the sum of the numbers 1 to 5, or 15.
+			</p>
+			<p>
+				Because we used the <code>length()</code> function, our function <code>sumArray()</code> is very flexible and can be used with arrays of all sizes, because to traverse any array, <code>i</code> must range from 0 to the length of the array minus one.
+				Writing your programs with flexibility and maintainability in mind is known as <i>soft-coding</i>, while code which is hard to maintain and generally very unflexible is known as <i>hard-coded</i>.
+				To see this difference a little more starkly, here's two examples of our <code>while</code> loop from a while back:
+			</p>
+			<div class="codeinset">
+				<code>int i = 0;</code><br>
+				<code>int sum = 0;</code><br>
+				<code>array = [1, 2, 3, 4, 5]</code><br>
+				<code>WHILE i &lt; 5:</code><br>
+				<code>{</code><br>
+				<code>&emsp;&emsp;sum = sum + array[i];</code><br>
+				<code>&emsp;&emsp;i = i + 1;</code><br>
+				<code>}</code><br>
+			</div>
+			<div class="codeinset">
+				<code>int i = 0;</code><br>
+				<code>int sum = 0;</code><br>
+				<code>array = [1, 2, 3, 4, 5]</code><br>
+				<code>WHILE i &lt; length(array):</code><br>
+				<code>{</code><br>
+				<code>&emsp;&emsp;sum = sum + array[i];</code><br>
+				<code>&emsp;&emsp;i = i + 1;</code><br>
+				<code>}</code><br>
+			</div>
+			<p>
+				The first example is hard-coded because it is unflexible: if we change the number of values in <code>array</code> without changing the <code>while</code> conditional, the code will break.
+				However, in the second example, the <code>while</code> loop is soft-coded because no matter how many values we put in <code>array</code> the code will still perform its intended purpose: summing the values.
+				The chief hallmark of a hard-coded piece of software is the placement of seemingly arbitrary values, like the 5 in the <code>while</code> conditional, rather than flexible solutions like the <code>length()</code> function.
+			</p>
+		</h3>
+		
+		<h2>Libraries</h2>
+		
+		<h3>
+			<p>
+				<i>Libraries</i> (sometimes known as <i>modules</i>), are packages of <a href="https://en.wikipedia.org/wiki/Open_source">open-source</a> (free to use) software which provide useful functions/procedures which you can use in your own code.
+				Libraries are normally developed around a common theme, like providing advanced mathematical or statistical analysis functions or making GUI (Guided User Interface) creation easier.
+				This is super helpful when programming, because it means that you don't have to write your whole program from the ground up.
+				Additionally, since library authors wrote the entire suite of functionality for a specific purpose, it is normally super optimized and efficient, and doesn't require you to learn the ins and outs of whatever particular algorithm they're implementing.
+				Some examples of popular Python libraries include: <a href="https://github.com/3b1b/manim">manim</a>, <a href="https://www.pygame.org/wiki/about">pygame</a>, or <a href="https://numpy.org/">numpy</a>.
+				If they look intimidating right now, take a deep breath and don't worry. We'll get there.
+			<p>
+		</h3>
+		
+		<h2>In Conclusion</h2>
+		
+		<h3>
+			<p>
+				Functions take inputs and return the corresponding outputs, which is useful because it allows us to reuse our code multiple times;
+				for example, we can wrap a useful behavior, like summing an array, in a function.
+				Additionally, we can use functions other people have written by importing libraries into our code, which is done in different ways in different languages.
+				As you become more knowledgeable about programming, the types of parameters and return values you deal with will broaden, and the types of things you do in the function body will become more advanced and diverse, but the general concept of functions is always the same.
+			</p>
+			<p>
+				Now that you know about the functions, it's time to learn about <a target="_self" href="oop-programming.html">OOP</a> (Object Oriented Programming).
+			</p>
+		</h3>
+		<hr>
+		<h4><p><a target="_self" href="../index.html">Home</a>&emsp;&emsp;&emsp;&emsp;<a target="_self" href="#">Back to Top</a></p></h4>
+	</div>
+</body>
+
+</html>

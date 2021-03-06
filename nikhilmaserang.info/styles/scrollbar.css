@@ -1,0 +1,30 @@
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: url('../resources/background.png') repeat-y !important;
+}
+
+/* Track Ends
+::-webkit-scrollbar-track-piece:start {
+   background: url('../resources/background.png') repeat-y !important;
+}
+*/
+
+::-webkit-scrollbar-track-piece:end {
+    background: url('../resources/background.png') repeat-y !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F1F1F;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #262626;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #333333;
+}
